@@ -15,14 +15,20 @@ form.addEventListener("submit", (e) => {
         prevReadings[i] = Number(formData.get(`room${i}-prev`));
     }
 
-    const consumption = {};
+    const consumptions = {};
 
     for (const room in currReadings) {
-        consumption[room] = currReadings[room] - prevReadings[room];
+        consumptions[room] = currReadings[room] - prevReadings[room];
     }
 
-    const totalConsumption = Object.values(consumption).reduce((acc, curr) => (acc + curr), 0);
+    const totalConsumption = Object.values(consumptions).reduce((acc, curr) => (acc + curr), 0);
     
     const electricBill = Number(formData.get("bill"));
+
+    const payments = {};
+
+    for (const room in consumptions) {
+        payments[room] = Math.round(((consumptions[room] / totalConsumption) * electricBill) * 100) / 100;
+    }
     
 });
