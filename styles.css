@@ -38,3 +38,7 @@ fieldset input,
 fieldset label {
     font-size: 1.2rem;
 }
+
+form button {
+    font-size: 1.6rem;
+}
