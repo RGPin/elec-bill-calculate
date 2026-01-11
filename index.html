@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <link rel="stylesheet" href="styles.css" >
+    <script src="script.js" defer></script>
+    <title>Electric Bill Calculation</title>
+</head>
+<body>
+    <header>
+        <h1>Electric Bill Calculation (3rd floor)</h1>
+    </header>
+    <main>
+        <form id="readings-form">
+            <fieldset>
+                <h3>Enter <em>CURRENT</em> electric submeter readings: </h3>
+                <label for="room1-curr">
+                    Room 1:
+                    <input type="number" name="room1-curr" id="room1-curr">
+                </label>
+                <label for="room2-curr">
+                    Room 2:
+                    <input type="number" name="room2-curr" id="room2-curr">
+                </label>
+                <label for="room3-curr">
+                    Room 3:
+                    <input type="number" name="room3-curr" id="room3-curr">
+                </label>
+                <label for="room4-curr">
+                    Room 4:
+                    <input type="number" name="room4-curr" id="room4-curr">
+                </label>
+                <label for="room5-curr">
+                    Room 5:
+                    <input type="number" name="room5-curr" id="room5-curr">
+                </label>
+                <label for="room6-curr">
+                    Room 6:
+                    <input type="number" name="room6-curr" id="room6-curr">
+                </label>
+            </fieldset>
+            <fieldset>
+                <h3>Enter <em>PREVIOUS</em> electric submeter readings: </h3>
+                <label for="room1-prev">
+                    Room 1:
+                    <input type="number" name="room1-prev" id="room1-prev">
+                </label>
+                <label for="room2-prev">
+                    Room 2:
+                    <input type="number" name="room2-prev" id="room2-prev">
+                </label>
+                <label for="room3-prev">
+                    Room 3:
+                    <input type="number" name="room3-prev" id="room3-prev">
+                </label>
+                <label for="room4-prev">
+                    Room 4:
+                    <input type="number" name="room4-prev" id="room4-prev">
+                </label>
+                <label for="room5-prev">
+                    Room 5:
+                    <input type="number" name="room5-prev" id="room5-prev">
+                </label>
+                <label for="room6-prev">
+                    Room 6:
+                    <input type="number" name="room6-prev" id="room6-prev">
+                </label>
+            </fieldset>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="output-div"></div>
+    </main>
+</body>
+</html>

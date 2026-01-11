@@ -1,0 +1,40 @@
+@import url(https://fonts.bunny.net/css?family=playfair-display:400,500,600,700|roboto:300,400,500);
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    max-width: 30rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+form fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+fieldset label {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+fieldset label input{
+    flex: 1;
+}
+
+fieldset input,
+fieldset label {
+    font-size: 1.2rem;
+}
