@@ -6,12 +6,12 @@ form.addEventListener("submit", (e) => {
     const formData = new FormData(form);
 
     const currReadings = {};
-    for (let i = 1; i <=6; i++) {
+    for (let i = 1; i <= 6; i++) {
         currReadings[i] = Number(formData.get(`room${i}-curr`));
     }
 
     const prevReadings = {};
-    for (let i = 1; i <=6; i++) {
+    for (let i = 1; i <= 6; i++) {
         prevReadings[i] = Number(formData.get(`room${i}-prev`));
     }
 
@@ -30,5 +30,14 @@ form.addEventListener("submit", (e) => {
     for (const room in consumptions) {
         payments[room] = Math.round(((consumptions[room] / totalConsumption) * electricBill) * 100) / 100;
     }
+
+    const title = document.createElement("h3");
+    title.textContent = "Calculated payments:";
+    outputDiv.append(title);
     
+    for (let i = 1; i <= 6; i++) {
+        const pay = document.createElement("h4");
+        pay.textContent = `Room ${i}: ${payments[i]}`;
+        outputDiv.append(pay);
+    }
 });
