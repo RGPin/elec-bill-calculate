@@ -48,7 +48,7 @@ fieldset label {
     gap: 0.4rem;
 }
 
-fieldset label input{
+fieldset label input {
     flex: 1;
 }
 
@@ -59,4 +59,10 @@ fieldset label {
 
 form button {
     font-size: 1.6rem;
+}
+
+@media (max-width: 470px) {
+    fieldset label {
+        display: block;
+    }
 }
