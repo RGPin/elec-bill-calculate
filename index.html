@@ -1,83 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-    <link rel="stylesheet" href="styles.css" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <title>Electric Bill Calculation</title>
 </head>
+
 <body>
     <header>
-        <h1>Electric Bill Calculation (3rd floor)</h1>
+        <h1>Electric Bill Calculation</h1>
     </header>
     <main>
         <form id="readings-form">
-            <fieldset>
-                <h3>Enter <em>CURRENT</em> electric submeter readings: test</h3>
-                <label for="room1-curr">
-                    Room 1:
-                    <input type="number" name="room1-curr" id="room1-curr" step="0.001">
-                </label>
-                <label for="room2-curr">
-                    Room 2:
-                    <input type="number" name="room2-curr" id="room2-curr" step="0.001">
-                </label>
-                <label for="room3-curr">
-                    Room 3:
-                    <input type="number" name="room3-curr" id="room3-curr" step="0.001">
-                </label>
-                <label for="room4-curr">
-                    Room 4:
-                    <input type="number" name="room4-curr" id="room4-curr" step="0.001">
-                </label>
-                <label for="room5-curr">
-                    Room 5:
-                    <input type="number" name="room5-curr" id="room5-curr" step="0.001">
-                </label>
-                <label for="room6-curr">
-                    Room 6:
-                    <input type="number" name="room6-curr" id="room6-curr" step="0.001">
-                </label>
-            </fieldset>
-            <fieldset>
-                <h3>Enter <em>PREVIOUS</em> electric submeter readings: </h3>
-                <label for="room1-prev">
-                    Room 1:
-                    <input type="number" name="room1-prev" id="room1-prev" step="0.001">
-                </label>
-                <label for="room2-prev">
-                    Room 2:
-                    <input type="number" name="room2-prev" id="room2-prev" step="0.001">
-                </label>
-                <label for="room3-prev">
-                    Room 3:
-                    <input type="number" name="room3-prev" id="room3-prev" step="0.001">
-                </label>
-                <label for="room4-prev">
-                    Room 4:
-                    <input type="number" name="room4-prev" id="room4-prev" step="0.001">
-                </label>
-                <label for="room5-prev">
-                    Room 5:
-                    <input type="number" name="room5-prev" id="room5-prev" step="0.001">
-                </label>
-                <label for="room6-prev">
-                    Room 6:
-                    <input type="number" name="room6-prev" id="room6-prev" step="0.001">
-                </label>
-            </fieldset>
-            <fieldset>
-                <h3>Enter electric bill:</h3>
-                <label for="bill">
-                    Electric Bill:
-                    <input type="number" name="bill" id="bill" step="0.001">
-                </label>
-            </fieldset>
+            <div id="third-floor">
+                <h2>3rd Floor</h2>
+                <fieldset>
+                    <h3>Enter <em>CURRENT</em> electric submeter readings: </h3>
+                    <label for="room1-curr">
+                        Room 1:
+                        <input type="number" name="room1-curr" id="room1-curr" step="0.001">
+                    </label>
+                    <label for="room2-curr">
+                        Room 2:
+                        <input type="number" name="room2-curr" id="room2-curr" step="0.001">
+                    </label>
+                    <label for="room3-curr">
+                        Room 3:
+                        <input type="number" name="room3-curr" id="room3-curr" step="0.001">
+                    </label>
+                    <label for="room4-curr">
+                        Room 4:
+                        <input type="number" name="room4-curr" id="room4-curr" step="0.001">
+                    </label>
+                    <label for="room5-curr">
+                        Room 5:
+                        <input type="number" name="room5-curr" id="room5-curr" step="0.001">
+                    </label>
+                    <label for="room6-curr">
+                        Room 6:
+                        <input type="number" name="room6-curr" id="room6-curr" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter <em>PREVIOUS</em> electric submeter readings: </h3>
+                    <label for="room1-prev">
+                        Room 1:
+                        <input type="number" name="room1-prev" id="room1-prev" step="0.001">
+                    </label>
+                    <label for="room2-prev">
+                        Room 2:
+                        <input type="number" name="room2-prev" id="room2-prev" step="0.001">
+                    </label>
+                    <label for="room3-prev">
+                        Room 3:
+                        <input type="number" name="room3-prev" id="room3-prev" step="0.001">
+                    </label>
+                    <label for="room4-prev">
+                        Room 4:
+                        <input type="number" name="room4-prev" id="room4-prev" step="0.001">
+                    </label>
+                    <label for="room5-prev">
+                        Room 5:
+                        <input type="number" name="room5-prev" id="room5-prev" step="0.001">
+                    </label>
+                    <label for="room6-prev">
+                        Room 6:
+                        <input type="number" name="room6-prev" id="room6-prev" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter 3rd floor electric bill:</h3>
+                    <label for="3rd-floor-bill">
+                        Electric Bill:
+                        <input type="number" name="3rd-floor-bill" id="3rd-floor-bill" step="0.001">
+                    </label>
+                </fieldset>
+            </div>
+            <div id="basement-with-main">
+                <h2>Basement with Main</h2>
+                <fieldset>
+                    <h3>Enter <em>CURRENT</em> electric submeter reading: </h3>
+                    <label for="basement-curr">
+                        Basement:
+                        <input type="number" name="basement-curr" id="basement-curr" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter <em>PREVIOUS</em> electric submeter reading: </h3>
+                    <label for="basement-prev">
+                        Basement:
+                        <input type="number" name="basement-prev" id="basement-prev" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter basement with main electric bill:</h3>
+                    <label for="basement-with-main-bill">
+                        Electric Bill:
+                        <input type="number" name="basement-with-main-bill" id="basement-with-main-bill" step="0.001">
+                    </label>
+                </fieldset>
+            </div>
+            <div id="alley-with-extension">
+                <h2>Alley with Extension</h2>
+                <fieldset>
+                    <h3>Enter <em>CURRENT</em> electric submeter reading: </h3>
+                    <label for="extension-curr">
+                        Extension:
+                        <input type="number" name="extension-curr" id="extension-curr" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter <em>PREVIOUS</em> electric submeter reading: </h3>
+                    <label for="extension-prev">
+                        Extension:
+                        <input type="number" name="extension-prev" id="extension-prev" step="0.001">
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <h3>Enter alley with extension electric bill:</h3>
+                    <label for="alley-with-extentsion-bill">
+                        Electric Bill:
+                        <input type="number" name="alley-with-extentsion-bill" id="alley-with-extentsion-bill" step="0.001">
+                    </label>
+                </fieldset>
+            </div>
             <button type="submit">Calculate</button>
         </form>
         <div id="output-div"></div>
     </main>
 </body>
+
 </html>

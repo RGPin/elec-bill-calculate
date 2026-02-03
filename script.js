@@ -5,30 +5,30 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     const formData = new FormData(form);
 
-    const currReadings = {};
+    const currReadings3rdFloor = {};
     for (let i = 1; i <= 6; i++) {
-        currReadings[i] = Number(formData.get(`room${i}-curr`));
+        currReadings3rdFloor[i] = Number(formData.get(`room${i}-curr`));
     }
 
-    const prevReadings = {};
+    const prevReadings3rdFloor = {};
     for (let i = 1; i <= 6; i++) {
-        prevReadings[i] = Number(formData.get(`room${i}-prev`));
+        prevReadings3rdFloor[i] = Number(formData.get(`room${i}-prev`));
     }
 
-    const consumptions = {};
+    const consumptions3rdFloor = {};
 
-    for (const room in currReadings) {
-        consumptions[room] = currReadings[room] - prevReadings[room];
+    for (const room in currReadings3rdFloor) {
+        consumptions3rdFloor[room] = currReadings3rdFloor[room] - prevReadings3rdFloor[room];
     }
 
-    const totalConsumption = Object.values(consumptions).reduce((acc, curr) => (acc + curr), 0);
+    const totalConsumption3rdFloor = Object.values(consumptions3rdFloor).reduce((acc, curr) => (acc + curr), 0);
 
-    const electricBill = Number(formData.get("bill"));
+    const electricBill3rdFloor = Number(formData.get("3rd-floor-bill"));
 
     const payments = {};
 
-    for (const room in consumptions) {
-        payments[room] = Math.round(((consumptions[room] / totalConsumption) * electricBill) * 100) / 100;
+    for (const room in consumptions3rdFloor) {
+        payments[room] = Math.round(((consumptions3rdFloor[room] / totalConsumption3rdFloor) * electricBill3rdFloor) * 100) / 100;
     }
 
     outputDiv.textContent = "";
