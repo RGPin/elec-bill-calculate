@@ -1,6 +1,7 @@
 const outputDiv = document.querySelector("#output-div");
 
 function createTables(data) {
+  console.log(data);
   const thirdFloorTable = createTable(data, "3rd Floor");
   const basementMainTable = createTable(data, "Basement with Main");
   const alleyExtensionTable = createTable(data, "Alley with Extension");
@@ -17,8 +18,9 @@ function createTable(data, captionText) {
 
   populateThead(thead);
   populateTbody(data, tbody, captionText);
+  const tfoot = addTfoot(data, captionText);
 
-  table.append(thead, tbody, caption);
+  table.append(thead, tbody, tfoot, caption);
   return table;
 }
 
@@ -112,6 +114,31 @@ function populateAlleyExtensionTbody(data, tbody) {
   extensionTr.append(extensionTh, extensionTd1, extensionTd2);
 
   tbody.append(extensionTr, alleyTr);
+}
+
+function addTfoot(data, captionText) {
+  const tfoot = document.createElement("tfoot");
+  const tr = document.createElement("tr");
+  const th = document.createElement("th");
+  const td = document.createElement("td");
+
+  th.colSpan = 2;
+  th.textContent = "Total";
+  switch (captionText) {
+    case "3rd Floor":
+      td.textContent = data[2]["thirdFloorTotal"];
+      break;
+    case "Basement with Main":
+      td.textContent = data[2]["basementWithMainTotal"];
+      break;
+    case "Alley with Extension":
+      td.textContent = data[2]["alleyWithExtensionTotal"];
+      break;
+  }
+
+  tr.append(th, td);
+  tfoot.append(tr);
+  return tfoot;
 }
 
 export { createTables };

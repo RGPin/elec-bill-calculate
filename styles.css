@@ -80,6 +80,10 @@ tfoot {
   background-color: rgb(228 240 245);
 }
 
+tfoot {
+    color: red;
+}
+
 th,
 td {
   border: 1px solid rgb(160 160 160);

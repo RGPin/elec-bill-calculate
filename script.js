@@ -94,9 +94,19 @@ form.addEventListener("submit", (e) => {
   payments["Alley"] =
     Math.round((electricBillExtension - payments["Extension"]) * 100) / 100;
 
+  const totals = {};
+
+  let thirdFloorPaymentsSum = 0;
+  for (let i = 1; i <= 6; i++) {
+    thirdFloorPaymentsSum += payments[i];
+  }
+  totals["thirdFloorTotal"] = thirdFloorPaymentsSum;
+  totals["basementWithMainTotal"] = payments["Main"] + payments["Basement"];
+  totals["alleyWithExtensionTotal"] = payments["Alley"] + payments["Extension"];
+
   outputDiv.textContent = "";
 
-  createTables([percentages, payments]);
+  createTables([percentages, payments, totals]);
 
   window.scrollTo({
     top: document.body.scrollHeight,
